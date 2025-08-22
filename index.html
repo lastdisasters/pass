@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test JSON</title>
+</head>
+<body>
+  <h1>Test JSON dari GitHub Pages</h1>
+  <pre id="output"></pre>
+
+  <script>
+    fetch('garjas_10k_simple.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('output').textContent = 
+          JSON.stringify(data.slice(0, 5), null, 2); // tampilkan 5 data pertama
+      })
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>
